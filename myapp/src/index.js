@@ -79,9 +79,25 @@ function MyForm3() {
   )
 }
 
+function MyForm4() {
+  const [textarea, setTextarea] = useState(
+    "The content of a textarea goes in the value attribute"
+  );
+
+  const handleChange = (event) => {
+    setTextarea(event.target.value)
+  }
+
+  return (
+    <form>
+      <textarea value={textarea} onChange={handleChange} />
+    </form>
+  )
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <MyForm3/>
+  <MyForm4/>
 );
 
 // If you want to start measuring performance in your app, pass a function
